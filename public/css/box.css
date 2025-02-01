@@ -1,0 +1,43 @@
+.content {
+  display: grid;
+  grid-template-columns: repeat(9, 1fr);
+  grid-template-rows: repeat(9, 1fr);
+  gap: 1px;
+  width: 90vw;
+  max-width: 600px;
+  margin: auto;
+}
+
+.childbox {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  font-size: 2vw;
+  text-align: center;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+  font-weight: bold;
+  background-color: #f9f9f9;
+}
+
+/* Styling for 3x3 subgrids */
+.content .childbox:nth-child(3n+1) {
+  border-left: 3px solid #000;
+}
+
+.content .childbox:nth-child(27n+1),
+.content .childbox:nth-child(54n+1) {
+  border-top: 3px solid #000;
+}
+
+/* Adjustments for responsiveness */
+@media (max-width: 600px) {
+  .content {
+    width: 95vw;
+    gap: 1px;
+  }
+
+  .childbox {
+    font-size: 4vw;
+    min-width: 30px;
+  }
+}

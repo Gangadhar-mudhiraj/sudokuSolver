@@ -1,0 +1,91 @@
+/* Global Styles */
+body {
+  height: 100%;
+  font-family: "Archivo Narrow", sans-serif;
+  font-size: 20px;
+  text-align: center;
+  background: url("https://images.unsplash.com/photo-1517582082532-16a092d47074?q=80&w=987&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fA%3D%3D");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  background-color: #030303;
+}
+
+/* Sudoku Solver Title */
+h1 {
+  display: block;
+  height: 80px;
+  color: #56ad77;
+  width: 440px;
+  margin: auto;
+  margin-top: 20px;
+  text-transform: uppercase;
+}
+
+/* Sudoku Grid Styling */
+.sudoku-container {
+  width: 738px;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-bottom: 50px;
+}
+
+.sudoku-box {
+  box-shadow: 0 0 5px 5px #928686;
+}
+
+.childbox {
+  height: 77px;
+  width: 75px;
+  border: 1px dotted #bb8909;
+  font-size: 50px;
+  text-align: center;
+  color: #43dddd;
+  background-color: transparent;
+}
+
+/* Border Styling */
+.border-right {
+  border-right: 3px solid white;
+}
+
+.border-bottom {
+  border-bottom: 3px solid white;
+}
+
+.border-left {
+  border-left: 3px solid white;
+}
+
+.border-top {
+  border-top: 3px solid white;
+}
+
+/* Remove Input Spinner */
+input::-webkit-inner-spin-button {
+  appearance: none;
+}
+
+/* Mobile Responsive Styles */
+@media (max-width: 770px) {
+  .sudoku-container {
+    width: 350px;
+  }
+
+  .childbox {
+    height: 30px;
+    width: 30px;
+    font-size: 25px;
+  }
+
+  h1 {
+    width: 340px;
+    margin-top: 25px;
+  }
+}
