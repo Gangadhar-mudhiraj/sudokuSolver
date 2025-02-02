@@ -9,7 +9,10 @@ for (x of i) {
   x.name = p;
   p++;
 }
+const print = (arr) => {
+  console.log(arr);
 
+}
 for (x of right) {
   for (l of i) {
     let z = parseInt(l.name);

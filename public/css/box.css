@@ -1,43 +1,44 @@
 .content {
   display: grid;
   grid-template-columns: repeat(9, 1fr);
+
   grid-template-rows: repeat(9, 1fr);
-  gap: 1px;
-  width: 90vw;
-  max-width: 600px;
-  margin: auto;
+
+  width: 738px;
+  max-width: 100%;
+  /* margin-bottom: 50px; */
+
 }
 
-.childbox {
-  width: 100%;
-  aspect-ratio: 1 / 1;
-  font-size: 2vw;
-  text-align: center;
-  border: 1px solid #ccc;
-  box-sizing: border-box;
-  font-weight: bold;
-  background-color: #f9f9f9;
+
+.childbox:focus {
+  border-color: #56ad77;
 }
 
-/* Styling for 3x3 subgrids */
-.content .childbox:nth-child(3n+1) {
-  border-left: 3px solid #000;
+.childbox:nth-child(3n),
+.childbox:nth-child(9n),
+.childbox:nth-child(18n) {
+  border-right: 2px solid #fff;
 }
 
-.content .childbox:nth-child(27n+1),
-.content .childbox:nth-child(54n+1) {
-  border-top: 3px solid #000;
+.childbox:nth-child(3n+1),
+.childbox:nth-child(9n+1),
+.childbox:nth-child(18n+1) {
+  border-left: 2px solid #fff;
 }
 
-/* Adjustments for responsiveness */
-@media (max-width: 600px) {
-  .content {
-    width: 95vw;
-    gap: 1px;
-  }
+.childbox:nth-child(-n+9) {
+  border-top: 2px solid #fff;
+}
 
-  .childbox {
-    font-size: 4vw;
-    min-width: 30px;
-  }
+.childbox:nth-child(n+46):nth-child(-n+54) {
+  border-bottom: 2px solid #fff;
+}
+
+.childbox:nth-child(n+73):nth-child(-n+81) {
+  border-bottom: 2px solid #fff;
+}
+
+.childbox:nth-child(n+19):nth-child(-n+27) {
+  border-bottom: 2px solid #fff;
 }

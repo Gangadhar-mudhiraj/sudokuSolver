@@ -6,8 +6,10 @@
 
     <div class="solution">
         <form action="/sudoku/<%=id%>/new" method="post">
-            <%- include("../includes/box.ejs")%>
-                <button>Submit</button>
+            <div class="sudoku-container">
+                <%- include("../includes/box.ejs")%>
+            </div>
+            <button>Submit</button>
         </form>
     </div>
     <script src="/js/box.js"></script>

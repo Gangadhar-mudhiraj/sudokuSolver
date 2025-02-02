@@ -1,29 +1,37 @@
-<%layout( "layouts/boilerplate.ejs" )%>
+<%layout("layouts /boilerplate.ejs")%>
     <link rel="stylesheet" href="/css/box.css">
     <link rel="stylesheet" href="/css/solution.css">
+
     <div class="solution">
         <h1>Sudoku Solution</h1>
-        <%- include("../includes/box.ejs")%>
-            <p>
-                <%=solution%>
-            </p>
+        <div class="sudoku-container">
+            <%- include("../includes/box.ejs")%>
+        </div>
+
+        <!-- Hidden div to store the solution -->
+        <div id="solution" data-solution="<%= solution %>" style="display:none;"></div>
     </div>
+
     <script src="/js/solution.js"></script>
+
     <script>
         execute();
+
         function execute() {
-            let s = document.querySelector("p").innerText;
+            // Get the string representation of the solution array from the data attribute
+            const solutionString = document.getElementById('solution').getAttribute('data-solution').replace(/[^0-9]/g, ''); // Remove commas and spaces
+
             let inp = document.querySelectorAll("input");
-            let str = "";
-            for (let idx = 0; idx < s.length; idx++) {
-                if (s.charAt(idx) != ',' && s.charAt(idx) != ' ') {
-                    str += s.charAt(idx);
-                }
+
+            // Ensure we match the solution's length with the number of inputs
+            if (inp.length !== solutionString.length) {
+                console.error('Mismatch between the number of inputs and solution digits!');
+                return;
             }
-            let pos = 1;
-            for (x of inp) {
-                x.value = str.charAt(pos);
-                pos++
-            }
+
+            // Fill each input field with the corresponding solution value
+            inp.forEach((input, idx) => {
+                input.value = solutionString.charAt(idx);
+            });
         }
     </script>
